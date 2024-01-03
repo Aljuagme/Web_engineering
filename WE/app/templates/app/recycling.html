@@ -1,0 +1,21 @@
+<!-- query_objects.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recycling App Prototype</title>
+</head>
+<body>
+    <h1>Recycling Object Query</h1>
+    <form method="post" action="{% url 'query_objects' %}">
+        {% csrf_token %}
+        <label for="object_name">Object Name:</label>
+        <input type="text" name="object_name" value="Beer" readonly>
+        <button type="submit">Query</button>
+    </form>
+    {% if object_name %}
+        <p>{{ object_name }} belongs to the {{ proper_container }}</p>
+        <pre>{{ explanation|safe }}</pre>
+    {% endif %}
+</body>
+</html>

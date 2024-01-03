@@ -9,7 +9,8 @@ urlpatterns = [
     path("guest/", views.guest, name="guest"),
     path("home/", views.home, name="home"),
     path("recycling/", views.recycling, name="recycling"),
-    path("waste_management/", views.waste_management, name="waste_management")
+    path("waste_management/", views.waste_management, name="waste_management"),
+    path("query/", views.query_objects, name="query_objects")
 ]
 
 if settings.DEBUG:
