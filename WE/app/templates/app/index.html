@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Django App</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ecf0f1; /* Set a background color for the entire page */
+        }
+
+        .block-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block {
+            width: 700px; /* Increase the width */
+            height: 150px; /* Increase the height */
+            margin: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 150px;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 20px; /* Set font size */
+            background-size: cover; /* Make the background image cover the entire block */
+            background-position: center; /* Center the background image */
+        }
+
+        .recycling-block {
+            background-color: #27ae60; /* Set a color related to recycling */
+            background-image: url('{% static "img/recycling.jpg" %}'); /* Set the path to your recycling image */
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .waste-management-block {
+            background-color: #e74c3c; /* Set a color related to waste management */
+            background-image: url('{% static "img/waste_disposal.jpg" %}'); /* Set the path to your waste management image */
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .block:hover {
+            opacity: 0.8; /* Reduce opacity on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="block-container">
+        <a href="{% url 'recycling' %}">
+            <div class="block recycling-block">Recycling</div>
+        </a>
+
+        <a href="{% url 'waste_management' %}">
+            <div class="block waste-management-block">Waste Management</div>
+        </a>
+    </div>
+</body>
+</html>
