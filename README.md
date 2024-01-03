@@ -4,6 +4,8 @@ Implementing:
 
 Prototyping:
 Query recycling object
+register
+login
 
 Not Implementing:
 Daily Recycling Tip
