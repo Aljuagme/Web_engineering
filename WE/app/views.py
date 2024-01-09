@@ -28,7 +28,7 @@ def query_objects(request):
     if request.method == "POST":
         object_name = "Beer"
         proper_container = "Glass or Metal Recycling Container, depending on its material"
-        explanation = "Glass beer: <span style='color: green; font-weight: bold;'>Green</span> Container\nCan beer: <span style='color: blue; font-weight: bold;'>Blue</span> Container"
+        explanation = "Glass beer: <span style='color: green; font-weight: bold;'>Green</span> Container\nCan beer: <span style='color: #CCCC00; font-weight: bold;'>Yellow</span> Container"
         return render(request, 'app/recycling.html',
                   {'object_name': object_name, 'proper_container': proper_container, 'explanation': explanation})
 
