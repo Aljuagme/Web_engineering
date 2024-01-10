@@ -10,9 +10,3 @@ run:
   # Define a command for the frontend service if it should be a separate process
   frontend: npm start -w ./frontend/app
   # or if frontend is a static site, serve it with a static file server or integrate static files in the backend
-
-# If you have any release phase tasks, like database migrations, use the command below
-release:
-  # Replace ./your-release-tasks.sh with a valid script path, or remove if not needed
-  # command:
-  #   - ./your-release-tasks.sh
