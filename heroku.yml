@@ -1,12 +1,17 @@
 build:
   docker:
-    web: ./green-house-app/backend
-    # Define frontend Docker build if you have a Dockerfile in this directory
-    frontend: ./green-house-app/frontend/app
+    web: green-house-app/backend  # Path from heroku.yml to backend Dockerfile
+    frontend: green-house-app/frontend/app  # Path from heroku.yml to frontend Dockerfile
 
-# Define the processes, similar to services in docker-compose.yml
+# Define the processes similar to services in docker-compose.yml
+# Heroku uses `web` for web servers that can receive HTTP traffic
+# Other services such as frontend need to be declared separately
 run:
-  web: npm start -w ./backend
-  # Define a command for the frontend service if it should be a separate process
-  frontend: npm start -w ./frontend/app
-  # or if frontend is a static site, serve it with a static file server or integrate static files in the backend
+  web: npm dev -w green-house-app/backend
+  frontend: npm start -w green-house-app/frontend/app
+  
+# Remove release image section as it's not needed here
+# Use release only when you need to run release tasks
+# release:
+#   command:
+#     - ./your-release-tasks.sh  # If you have any release tasks to run
