@@ -1,15 +1,18 @@
 build:
-  # You can specify the build context directories for your services
   docker:
     web: ./green-house-app/backend
-    frontend: ./green-house-app/frontend/app  # Example service name
+    # Define frontend Docker build if you have a Dockerfile in this directory
+    frontend: ./green-house-app/frontend/app
 
-# Define the processes similar to the services in docker-compose.yml
-# Heroku uses `web` for web servers that can receive HTTP traffic
-# Other services can be worker processes or other process types
+# Define the processes, similar to services in docker-compose.yml
+run:
+  web: npm start -w ./backend
+  # Define a command for the frontend service if it should be a separate process
+  frontend: npm start -w ./frontend/app
+  # or if frontend is a static site, serve it with a static file server or integrate static files in the backend
+
+# If you have any release phase tasks, like database migrations, use the command below
 release:
-  image:
-    web: backend
-    frontend: npm start -w ./frontend/app
-  command:
-    - ./your-release-tasks.sh  # If you have any release tasks to run
+  # Replace ./your-release-tasks.sh with a valid script path, or remove if not needed
+  # command:
+  #   - ./your-release-tasks.sh
