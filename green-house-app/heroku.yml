@@ -1,0 +1,15 @@
+build:
+  # You can specify the build context directories for your services
+  docker:
+    web: ./backend
+    # worker: ./frontend/app  # Example service name
+
+# Define the processes similar to the services in docker-compose.yml
+# Heroku uses `web` for web servers that can receive HTTP traffic
+# Other services can be worker processes or other process types
+release:
+  image:
+    web: backend
+    worker: frontend/app
+  command:
+    - ./your-release-tasks.sh  # If you have any release tasks to run
