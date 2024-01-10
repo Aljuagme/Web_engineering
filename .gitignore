@@ -1,3 +1,7 @@
+# node ignore files
+green-house-app/backend/node_modules/
+green-house-app/frontend/app/node_modules/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
