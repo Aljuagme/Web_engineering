@@ -33,7 +33,6 @@ const CreateEventPage = () => {
         console.log('Event Data:', eventData);
         console.log('Location', location.toString());
 
-        debugger;
         const formData = new FormData();
         formData.append('title', eventData.title);
         formData.append('description', eventData.description);
@@ -43,7 +42,6 @@ const CreateEventPage = () => {
 
         // Submit eventData to your backend API to create the event
         try {
-            debugger;
             const response = await axiosInstance.post('/api/events/create', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'

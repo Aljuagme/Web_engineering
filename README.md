@@ -24,3 +24,13 @@ Daily Recycling Tip
 
 Missing:
 Navigation tab to easier change topics
+
+
+
+
+---------
+1- git fetch
+2- git checkout node-react-app
+3- cd green-house-app
+4- docker-compose build --no-cache
+5- docker-compose up
